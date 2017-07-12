@@ -43,8 +43,8 @@ for (var i = 0; i < 12; i++) {
     if (d_alarm[i] > 0) {
         d_alarm[i] -= __d_stepFactor;
         if (d_alarm[i] <= 0) {
-            event_perform(ev_alarm, i);
             d_alarm[i] = 0;
+            event_perform(ev_alarm, i);
         }
     }
 }
