@@ -1,6 +1,6 @@
 # Delta
 
-Lightweight delta timing solution for GameMaker: Studio and GameMaker: Studio 2
+Lightweight delta timing solution for GameMaker: Studio 2
 
 ## Usage
 
