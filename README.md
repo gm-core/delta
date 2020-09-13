@@ -4,9 +4,7 @@ Lightweight delta timing solution for GameMaker: Studio and GameMaker: Studio 2
 
 ## Usage
 
-To use Delta, download [the latest release for your GameMaker version](https://github.com/gm-core/delta/releases), and add the scripts to your project. The easiest way to do this is to drag the scripts into the editor, or import them using the resource system.
-
-If you would like to also use the `DeltaObject` object, right click on `Objects` in your resource tree, and select `Add Existing`, then import the `DeltaObject.yy` (GMS2) or `DeltaObject.object.gmx` (GMS1) file.
+To use Delta, download [the latest .yymps release](https://github.com/gm-core/delta/releases), and import the local package to your project. For detailed instructions, see [this guide](https://gmcore.io/installing.html#guide).
 
 ## Delta Timing
 
@@ -50,6 +48,10 @@ someTimer -= d(1);
 
 A utility function to return the given number in frames that would constitute that many seconds. Useful for setting timers in real seconds. This function uses your current game speed to determine the result.
 
+### `delta_set_max_lag_compensation(maxLagMultiplier)`
+
+Sets the maximum multiplier for Delta to compensate for lag with. Default is 3. Setting this to a higher number will handle larger lag spikes, but may cause erratic behavior.
+
 ## DeltaObject
 
 Delta exposes an object parent which automates delta timing for most usages: movement, gravity, friction and alarms, even integrating natively with alarm events!
@@ -71,8 +73,6 @@ Once you have set your object to inherit from `DeltaObject`, you can use the fol
 * `d_gravity` instead of `gravity` (still uses `gravity_direction`)
 
 These values will be converted into the correct values for delta timing, and managed internally to the object, then set as their GameMaker equivalents. When using these variables, *do not* use the GameMaker equivalents as well.
-
-> **Note**: DeltaObject is considered beta. While it closely approximates the math that GameMaker uses, it is not an exact 1:1 when slowdowns/speedups occur.
 
 ## GM Core
 
