@@ -41,3 +41,11 @@ function d(argument0) {
 function seconds(argument0) {
 	return global.__delta_fps * argument0;
 }
+
+/// @desc Returns a value linearly interpolated towards a second value by a percentage
+/// @param val1
+/// @param val2
+/// @param amount
+function dlerp(argument0, argument1, argument2){
+	return lerp(argument1, argument0, power(2, -argument2 * d(1)));
+}
